@@ -1,0 +1,66 @@
+/* Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+body {
+	background-color: #000;
+}
+
+.wrapper {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+}
+
+.main {
+	position: relative;
+	background: #16e0bd;
+	padding: 1rem 2rem;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.tooltip {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	background-color: #fff;
+	font-size: 1.5rem;
+	width: fit-content;
+	padding: 0.5rem 1rem;
+	border-radius: 5px;
+	pointer-events: none;
+	transform: translateX(-50%);
+	transition: all 0.8s cubic-bezier(0.02, 0.22, 0.24, 0.91);
+	opacity: 0;
+	z-index: -2;
+}
+
+.tooltip::before {
+	content: "";
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	left: 50%;
+	bottom: -10px;
+	background-color: #fff;
+	transform: translateX(-50%) rotate(45deg);
+}
+
+.mainText {
+	font-size: 2.5rem;
+}
+
+.main:hover .tooltip {
+	opacity: 1;
+	top: -80px;
+}
